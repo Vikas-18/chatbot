@@ -1,0 +1,37 @@
+<div class="main">
+  <img class="admin" src="assets/images/admin.png" alt="admin icon" />
+
+  <div *ngIf="!isAuthenticated" class="auth-section">
+    <h2>Hostel Admin Access</h2>
+    <form class="form" (ngSubmit)="handleSubmit()">
+      <div class="input-wrapper">
+        <input
+          type="password"
+          placeholder="Enter The Key Of Your Hostel"
+          [(ngModel)]="passkey"
+          name="passkey"
+          required
+        />
+        <button class="buttonadmin" type="submit" [disabled]="loading">
+          {{ loading ? 'Verifying...' : 'Submit' }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="isAuthenticated" class="dashboard-section">
+    <div class="admin-header">
+      <h2>Hostel Complaints Management</h2>
+      <div class="admin-actions">
+        <button class="btn-refresh" (click)="loadComplaints()" [disabled]="loading">
+          <i class="fa fa-refresh"></i> Refresh
+        </button>
+        <button class="btn-logout" (click)="handleAdminLogout()">
+          <i class="fa fa-sign-out"></i> Logout
+        </button>
+      </div>
+    </div>
+
+    <app-complain-table [complaints]="complaints"></app-complain-table>
+  </div>
+</div>

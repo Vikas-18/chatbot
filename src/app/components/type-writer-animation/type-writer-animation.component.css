@@ -1,0 +1,83 @@
+.heading {
+  padding-top: 5rem;
+  margin-left: 5rem;
+  font-family: "Solitreo", cursive;
+  font-size: 2.5rem;
+  color: #111;
+}
+
+.typewriter {
+  padding-top: 1.5rem;
+  padding-bottom: 5px;
+  margin-left: 5rem;
+  width: max-content;
+  font-family: "Lato", sans-serif;
+  font-size: 2.2rem;
+  color: #1f5156;
+  min-height: 4rem;
+}
+
+.cursor {
+  display: inline-block;
+  font-weight: 300;
+  animation: blink 0.8s infinite;
+  color: #1f5156;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.container-chatbotmob {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.text-container {
+  width: 50%;
+}
+
+.chatbotmob {
+  width: 28rem;
+  max-width: 100%;
+  margin-right: 5rem;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 900px) {
+  .container-chatbotmob {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .chatbotmob {
+    width: 18rem;
+    margin-right: 0;
+    margin-top: 1.5rem;
+  }
+
+  .heading {
+    padding-top: 1.5rem;
+    margin-left: 0;
+    font-size: 2rem;
+  }
+
+  .typewriter {
+    padding-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.8rem;
+  }
+}

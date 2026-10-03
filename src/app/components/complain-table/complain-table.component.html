@@ -1,0 +1,56 @@
+<div class="table-section">
+  <div class="options">
+    <label for="filterCategory" class="filter-label">Filter by Category:</label>
+    <select
+      id="filterCategory"
+      class="complain-select"
+      [(ngModel)]="selectedOption"
+    >
+      <option value="">All Categories</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table class="complain-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Hostel</th>
+          <th>Room</th>
+          <th>Problem Type</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of filteredComplaints" [class.resolved-row]="c.resolved">
+          <td data-label="Name">{{ c.name || 'N/A' }}</td>
+          <td data-label="Hostel">{{ c.hostelName || 'N/A' }}</td>
+          <td data-label="Room">{{ c.roomNo || 'N/A' }}</td>
+          <td data-label="Problem">
+            <span class="badge badge-problem">{{ c.type }}</span>
+          </td>
+          <td data-label="Description" class="desc-cell">{{ c.description }}</td>
+          <td data-label="Status" class="status-cell">
+            <span *ngIf="c.resolved" class="badge-resolved">
+              <i class="fa fa-check"></i> Resolved
+            </span>
+            <button
+              *ngIf="!c.resolved"
+              class="btn-resolve"
+              (click)="handleResolve(c)"
+              [disabled]="resolvingIds.has(c.id || '')"
+            >
+              <i class="fa fa-clock-o"></i>
+              {{ resolvingIds.has(c.id || '') ? 'Resolving...' : 'Mark Resolved' }}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="filteredComplaints.length === 0">
+          <td colspan="6" class="no-data">No complaints found for this selection.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

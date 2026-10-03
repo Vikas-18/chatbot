@@ -1,0 +1,10 @@
+.home-container {
+  padding-bottom: 3rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.cards-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

@@ -1,0 +1,58 @@
+<div class="body">
+  <div class="container">
+    <div id="top">
+      <img
+        src="assets/images/chatbot.png"
+        alt="ChatBot"
+        class="navbar-brand"
+      />
+      <h1>Hostel Chat Bot</h1>
+    </div>
+
+    <div class="chat-container" #chatContainer>
+      <div id="chatbox">
+        <div *ngFor="let msg of messages">
+          <p *ngIf="msg.sender === 'user'" class="userText">
+            <span>{{ msg.text }}</span>
+          </p>
+
+          <p *ngIf="msg.sender === 'bot'" class="botText">
+            <span *ngIf="msg.isHtml" [innerHTML]="msg.text"></span>
+            <span *ngIf="!msg.isHtml">{{ msg.text }}</span>
+          </p>
+        </div>
+
+        <!-- Main menu button -->
+        <div class="menu-action-container">
+          <button class="btnc" (click)="handleMenuClick()">
+            Main Menu
+          </button>
+        </div>
+      </div>
+      <div id="chat-bar-bottom"></div>
+    </div>
+
+    <div class="chat-bar-input-block">
+      <div id="userInput">
+        <input
+          type="text"
+          id="textInput"
+          class="input-box"
+          placeholder="Type category number (1-7) or describe your problem..."
+          [(ngModel)]="inputMessage"
+          (keydown)="handleKeyPress($event)"
+          [disabled]="isProcessing"
+        />
+      </div>
+      <div class="chat-bar-icons">
+        <i
+          class="fa fa-paper-plane hvr-grow send-icon"
+          (click)="handleSend()"
+          role="button"
+          tabindex="0"
+          title="Send Message"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

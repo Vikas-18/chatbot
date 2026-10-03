@@ -1,0 +1,21 @@
+<div class="app-layout">
+  <app-nav-bar></app-nav-bar>
+
+  <!-- Global Toast Notifications -->
+  <div class="toast-container-fixed">
+    <div
+      *ngFor="let toast of toasts$ | async"
+      class="toast-item"
+      [ngClass]="toast.type"
+    >
+      <span>{{ toast.text }}</span>
+      <button (click)="closeToast(toast.id)" aria-label="Close notification">&times;</button>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>

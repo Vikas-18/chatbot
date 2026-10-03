@@ -1,0 +1,13 @@
+<div class="home-container">
+  <app-type-writer-animation></app-type-writer-animation>
+
+  <div class="cards-section">
+    <app-card
+      *ngFor="let item of services"
+      [animation]="item.animation"
+      [content]="item.works"
+      [images]="item.image"
+      [float]="item.float"
+    ></app-card>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.content {
+  width: 55%;
+  max-width: 900px;
+  margin: 70px auto;
+  overflow: hidden;
+  font-family: "Nunito", sans-serif;
+  clear: both;
+}
+
+.description {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #222;
+  text-align: justify;
+}
+
+.animation-left {
+  height: 180px;
+  width: 180px;
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.animation-right {
+  height: 180px;
+  width: 180px;
+  float: right;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.animation-left:hover,
+.animation-right:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .animation-left,
+  .animation-right {
+    float: none;
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 150px;
+    width: 150px;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

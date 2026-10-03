@@ -1,0 +1,107 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a routerLink="/" class="nav-logo" (click)="closeMobileMenu()">
+      <img
+        class="chatbot"
+        src="assets/images/chatbot.png"
+        alt="chatbot icon"
+      />
+    </a>
+
+    <ul class="nav-menu" [class.active]="click">
+      <li class="nav-item">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          About
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          href="mailto:hostelchatbot544@gmail.com"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          Feedback
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a
+          routerLink="/chatbot"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          ChatBot
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a
+          routerLink="/complain"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          Register Complain
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn()">
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          LogIn
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn()">
+        <a
+          routerLink="/signup"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          SignUp
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/admin"
+          routerLinkActive="active"
+          class="nav-links"
+          (click)="closeMobileMenu()"
+        >
+          Admin
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a
+          class="nav-links logout-btn"
+          (click)="logout()"
+          role="button"
+          tabindex="0"
+        >
+          Logout
+        </a>
+      </li>
+    </ul>
+    <div class="nav-icon" (click)="handleClick()">
+      <i class="fa" [class.fa-bars]="!click" [class.fa-times]="click" style="font-size: 1.5rem;"></i>
+    </div>
+  </div>
+</nav>

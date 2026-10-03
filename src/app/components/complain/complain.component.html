@@ -1,0 +1,109 @@
+<div class="form-container">
+  <div class="container-lg">
+    <div class="head">
+      <h1>Hostel Chat Bot</h1>
+    </div>
+    <div class="signin">
+      <h2>Register Complain</h2>
+
+      <form (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter Your Name"
+            required
+            [(ngModel)]="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email (Optional)</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter Your Email"
+            [(ngModel)]="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="contact" class="form-label">Contact Number (Optional)</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contact"
+            name="contact"
+            placeholder="Enter Your Contact Number"
+            pattern="[0-9]{10}"
+            title="Please enter a 10-digit phone number."
+            [(ngModel)]="contact"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="hostel" class="form-label">Hostel</label>
+          <select
+            class="form-control"
+            id="hostel"
+            name="hostel"
+            required
+            [(ngModel)]="hostel"
+          >
+            <option value="">Choose Your Hostel</option>
+            <option *ngFor="let h of hostels" [value]="h">{{ h }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="room" class="form-label">Room Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="room"
+            name="room"
+            placeholder="Enter Your Room Number"
+            required
+            [(ngModel)]="room"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="problem" class="form-label">Problem</label>
+          <select
+            class="form-control"
+            id="problem"
+            name="problem"
+            required
+            [(ngModel)]="problem"
+          >
+            <option value="">Choose Your Problem</option>
+            <option *ngFor="let p of problems" [value]="p">{{ p }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comment" class="form-label">Comments / Details</label>
+          <input
+            type="text"
+            class="form-control"
+            id="comment"
+            name="comment"
+            placeholder="Leave a description or comments"
+            [(ngModel)]="comment"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-dark" [disabled]="loading">
+          <span *ngIf="!loading">Submit Complaint</span>
+          <span *ngIf="loading">Submitting...</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

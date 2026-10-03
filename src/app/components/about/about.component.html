@@ -1,0 +1,13 @@
+<div class="about-container">
+  <div class="header-section">
+    <h2>Meet Our Team</h2>
+    <p>The minds behind The Innovation Ninjas and Hostel ChatBot</p>
+  </div>
+
+  <app-about-card
+    *ngFor="let member of members"
+    [name]="member.name"
+    [images]="member.image"
+    [content]="member.works"
+  ></app-about-card>
+</div>

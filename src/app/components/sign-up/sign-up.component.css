@@ -1,0 +1,124 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 2rem 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.head {
+  text-align: center;
+}
+
+.head h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: #1f5156;
+}
+
+.signin {
+  width: 450px;
+  max-width: 100%;
+  padding: 2.2rem;
+  background-color: #5ed99c;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.signin h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: #1f5156;
+  box-shadow: 0 0 0 3px rgba(31, 81, 86, 0.25);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #1f5156;
+}
+
+.btn-dark:hover:not(:disabled) {
+  background-color: #163d41;
+  transform: translateY(-1px);
+}
+
+.btn-dark:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.switch-link {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.switch-link a {
+  color: #1f5156;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signin {
+    width: 92%;
+    padding: 1.5rem;
+  }
+
+  .head h1 {
+    font-size: 1.4rem;
+  }
+}
